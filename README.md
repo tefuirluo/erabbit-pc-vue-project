@@ -1,6 +1,11 @@
 # 07-erabbit-pc-vue-project
 
 ## Project setup
+
+[项目笔记](http://zhoushugang.gitee.io/erabbit-client-pc-document/)
+
+[在线演示](http://erabbit.itheima.net/#/)
+
 ```
 npm install
 ```
