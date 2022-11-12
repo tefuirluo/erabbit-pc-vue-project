@@ -22,7 +22,7 @@ instance.interceptors.request.use(config => {
   // 进行请求配置的修改
   // 如果本地有 token 就在头部携带
   // 1. 获取用户信息对象
-  const { profile } = store.state.user.profile
+  const { profile } = store.state.user
   // 2. 判断是否有 token
   if (profile.token) {
     // 3. 设置 token
