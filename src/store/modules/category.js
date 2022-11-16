@@ -20,10 +20,9 @@ export default {
   // 获取分类函数
   actions: {
     async getList ({ commit }) {
-      // 获取分类数据
       const { result } = await findAllCategory()
-      // 修改分类数据
-      commit('setCategory', result)
+      // 获取数据成功，提交mutations进行数据修改
+      commit('setList', result)
     }
   }
 }
