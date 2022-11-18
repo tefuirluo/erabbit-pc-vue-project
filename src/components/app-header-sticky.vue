@@ -8,7 +8,6 @@
         <RouterLink to="/" >专题</RouterLink>
       </div>
     </div>
-
   </div>
 </template>
 
@@ -45,6 +44,7 @@ export default {
   opacity: 0;
   &.show {
     transition: all 0.3s linear;
+    transform: none;
     opacity: 1;
   }
   .container {

@@ -1,8 +1,10 @@
 <template>
   <!--顶部通栏-->
-  <AppNavbar />
+  <app-navbar />
   <!--头部组件-->
-  <AppHeader />
+  <app-header />
+  <!--吸顶头部-->
+  <app-header-sticky />
   <!--内容容器-->
   <div class="app-body">
     <!--二级路由-->
@@ -17,9 +19,10 @@ import AppNavbar from '@/components/app-navbar'
 import AppHeader from '@/components/app-header'
 import AppFooter from '@/components/app-footer'
 import { useStore } from 'vuex'
+import AppHeaderSticky from '@/components/app-header-sticky'
 export default {
   name: 'LayoutPage',
-  components: { AppFooter, AppHeader, AppNavbar },
+  components: { AppHeaderSticky, AppFooter, AppHeader, AppNavbar },
   // 获取下分类数据
   setup () {
     const store = useStore()
