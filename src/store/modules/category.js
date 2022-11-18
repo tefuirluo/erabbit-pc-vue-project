@@ -24,7 +24,7 @@ export default {
     // 修改当前一级分类下的open数据为 false
     hide (state, id) {
       const currCategory = state.list.find(item => item.id === id)
-      currCategory.open = true
+      currCategory.open = false
     }
   },
   // 获取分类函数
