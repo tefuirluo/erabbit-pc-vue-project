@@ -1,4 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import TopCategory from '@/views/category'
+import SubCategory from '@/views/category/sub'
 const Layout = () => import('@/views/Layout')
 const Home = () => import('@/views/home')
 // 路由规则
@@ -11,6 +13,14 @@ const routes = [
       {
         path: '/',
         component: Home
+      },
+      {
+        path: '/category/:id',
+        component: TopCategory
+      },
+      {
+        path: '/category/sub/:id',
+        component: SubCategory
       }
     ]
   }
