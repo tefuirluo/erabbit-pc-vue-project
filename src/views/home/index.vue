@@ -8,11 +8,14 @@
         <home-banner />
       </div>
     </div>
+    <!--新鲜好物-->
+    <!--人气推荐-->
   </div>
 </template>
 <script>
 import HomeCategory from '@/views/home/components/home-category'
 import HomeBanner from '@/views/home/components/home-banner'
+
 export default {
   name: 'PageHome',
   components: { HomeBanner, HomeCategory }
