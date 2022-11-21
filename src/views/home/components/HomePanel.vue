@@ -3,8 +3,11 @@
     <div class="container">
       <div class="head">
         <h3>{{ title }}<small>{{ subTitle }}</small></h3>
+        <!--右上角插槽-->
         <slot name="right" />
       </div>
+      <!--面板插槽-->
+      <slot />
     </div>
   </div>
 </template>
@@ -25,9 +28,9 @@ export default {
 }
 </script>
 
-<style scoped lang="less">
+<style scoped lang='less'>
 .home-panel {
-  background-color: #ffffff;
+  background-color: #fff;
   .head {
     padding: 40px 0;
     display: flex;
@@ -38,10 +41,10 @@ export default {
       font-weight: normal;
       margin-left: 6px;
       height: 35px;
-      line-height: 35;
+      line-height: 35px;
       small {
         font-size: 16px;
-        color: #999999;
+        color: #999;
         margin-left: 20px;
       }
     }
