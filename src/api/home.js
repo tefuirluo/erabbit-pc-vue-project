@@ -28,3 +28,13 @@ export const findNew = () => {
     '/home/new', 'get'
   )
 }
+
+/**
+ * 获取人气推荐
+ * @returns {*}
+ */
+export const findHot = () => {
+  return request(
+    '/home/hot', 'get'
+  )
+}

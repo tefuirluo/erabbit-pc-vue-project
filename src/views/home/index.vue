@@ -11,16 +11,18 @@
     <!--新鲜好物-->
     <home-new />
     <!--人气推荐-->
+    <home-hot />
   </div>
 </template>
 <script>
 import HomeCategory from '@/views/home/components/home-category'
 import HomeBanner from '@/views/home/components/home-banner'
 import homeNew from '@/views/home/components/home-new'
+import HomeHot from '@/views/home/components/home-hot'
 
 export default {
   name: 'PageHome',
-  components: { HomeBanner, HomeCategory, homeNew }
+  components: { HomeHot, HomeBanner, HomeCategory, homeNew }
 }
 </script>
 <style scoped lang="less">
