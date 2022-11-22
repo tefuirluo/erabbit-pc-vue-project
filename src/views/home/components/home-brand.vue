@@ -32,10 +32,10 @@ export default {
   components: { HomePanel },
   setup () {
     // 获取数据
-    const brands = ref([])
-    findBrand(10).then(data => {
-      brands.value = data.result
-    })
+    // const brands = ref([])
+    // findBrand(10).then(data => {
+    //   brands.value = data.result
+    // })
     const { target, result } = useLazyData(() => findBrand(10))
     // 切换效果 前提只有 0 1 两页
     const index = ref(0)
