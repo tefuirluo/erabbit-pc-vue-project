@@ -6,6 +6,7 @@
 import XtxSkeleton from '@/components/library/xtx-skeleton'
 import XtxCarousel from '@/components/library/xtx-carousel'
 import XtxMore from '@/components/library/xtx-more'
+import XtxBread from '@/components/library/xtx-bread'
 import defaultImg from '@/assets/images/200.png'
 
 export default {
@@ -15,6 +16,7 @@ export default {
     app.component(XtxSkeleton.name, XtxSkeleton)
     app.component(XtxCarousel.name, XtxCarousel)
     app.component(XtxMore.name, XtxMore)
+    app.component(XtxBread.name, XtxBread)
     // 定义指令
     defineDirective(app)
   }
