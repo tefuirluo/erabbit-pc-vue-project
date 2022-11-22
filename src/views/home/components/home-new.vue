@@ -25,7 +25,6 @@
 import HomePanel from '@/views/home/components/HomePanel'
 import XtxMore from '@/components/library/xtx-more'
 import HomeSkeleton from '@/views/home/components/home-skeleton'
-import { ref } from 'vue'
 import { findNew } from '@/api/home'
 import { useLazyData } from '@/hooks'
 
@@ -37,8 +36,7 @@ export default {
     // findNew().then(data => {
     //   goods.value = data.result
     // })
-    const target = ref(null)
-    const result = useLazyData(target, findNew)
+    const { target, result } = useLazyData(findNew)
     return { goods: result, target }
   }
 }
