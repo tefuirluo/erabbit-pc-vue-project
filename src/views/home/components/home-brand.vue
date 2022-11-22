@@ -36,6 +36,7 @@ export default {
     // findBrand(10).then(data => {
     //   brands.value = data.result
     // })
+    // 注意: useLazyData 需要的是 API 函数, 如果遇到要传参的情况, 自己写函数 在函数中调用 API
     const { target, result } = useLazyData(() => findBrand(10))
     // 切换效果 前提只有 0 1 两页
     const index = ref(0)

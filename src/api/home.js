@@ -31,10 +31,20 @@ export const findNew = () => {
 
 /**
  * 获取人气推荐
- * @returns {*}
+ * @returns {Promise}
  */
 export const findHot = () => {
   return request(
     '/home/hot', 'get'
+  )
+}
+
+/**
+ * 获取商品板块
+ * @returns {Promise}
+ */
+export const findGoods = () => {
+  return request(
+    '/home/goods', 'get'
   )
 }
