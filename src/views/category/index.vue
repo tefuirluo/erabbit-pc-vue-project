@@ -20,18 +20,33 @@
           </li>
         </ul>
       </div>
-      <!-- 不同分类商品 -->
+      <!-- 分类关联商品 -->
+      <div class="ref-goods" v-for="sub in subList" :key="sub.id">
+        <div class="head">
+          <h3>- {{ sub.name }} -</h3>
+          <p class="tag">温暖柔软，品质之选</p>
+          <XtxMore :path="`/category/sub/${sub.id}`" />
+        </div>
+        <div class="body">
+          <GoodsItem v-for="goods in sub.goods" :key="goods.id" :goods="goods" />
+        </div>
+      </div>
     </div>
   </div>
 </template>
 <script>
 import { findBanner } from '@/api/home'
-import { computed, ref } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { useStore } from 'vuex'
 import { useRoute } from 'vue-router'
+import GoodsItem from '@/views/category/components/goods-item'
+import { findTopCategory } from '@/api/category'
 
 export default {
   name: 'TopCategory',
+  components: {
+    GoodsItem
+  },
   setup () {
     // 轮播图
     const sliders = ref([])
@@ -50,7 +65,17 @@ export default {
       if (item) cate = item
       return cate
     })
-    return { sliders, topCategory }
+    // 获取各个子分类类目下推荐商品
+    const subList = ref([])
+    const getSubList = () => {
+      findTopCategory(route.params.id).then(data => {
+        subList.value = data.result.children
+      })
+    }
+    watch(() => route.params.id, (newVal) => {
+      newVal && getSubList()
+    }, { immediate: true })
+    return { sliders, topCategory, subList }
   }
 }
 </script>
@@ -89,6 +114,31 @@ export default {
           }
         }
       }
+    }
+  }
+  .ref-goods {
+    background-color: #fff;
+    margin-top: 20px;
+    position: relative;
+    .head {
+      .xtx-more {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+      .tag {
+        text-align: center;
+        color: #999;
+        font-size: 20px;
+        position: relative;
+        top: -20px;
+      }
+    }
+    .body {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      padding: 0 65px 30px;
     }
   }
 }
