@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import TopCategory from '@/views/category'
 import SubCategory from '@/views/category/sub'
+
 const Layout = () => import('@/views/Layout')
 const Home = () => import('@/views/home')
 // 路由规则
@@ -28,7 +29,10 @@ const routes = [
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes,
+  scrollBehavior () {
+    return { left: 0, top: 0 }
+  }
 })
 
 export default router
