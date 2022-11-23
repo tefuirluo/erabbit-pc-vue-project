@@ -2,21 +2,18 @@
 // 这就是插件
 // vue2.0插件写法要素：导出一个对象，有install函数，默认传入了Vue构造函数，Vue基础之上扩展
 // vue3.0插件写法要素：导出一个对象，有install函数，默认传入了app应用实例，app基础之上扩展
-
-import XtxSkeleton from '@/components/library/xtx-skeleton'
-import XtxCarousel from '@/components/library/xtx-carousel'
-import XtxMore from '@/components/library/xtx-more'
-import XtxBread from '@/components/library/xtx-bread'
 import defaultImg from '@/assets/images/200.png'
-
+// 批量导入
+const importFn = require.context('./', false, /\.vue$/)
 export default {
   install (app) {
-    // 在app上进行扩展，app提供 component directive 函数
-    // 如果要挂载原型 app.config.globalProperties 方式
-    app.component(XtxSkeleton.name, XtxSkeleton)
-    app.component(XtxCarousel.name, XtxCarousel)
-    app.component(XtxMore.name, XtxMore)
-    app.component(XtxBread.name, XtxBread)
+    // 批量注册全局组件
+    importFn.keys().forEach(key => {
+      // 导入组件
+      const component = importFn(key).default
+      // 注册组件
+      app.component(component.name, component)
+    })
     // 定义指令
     defineDirective(app)
   }
