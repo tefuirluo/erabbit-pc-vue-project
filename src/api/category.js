@@ -19,3 +19,14 @@ export const findTopCategory = (id) => {
     '/category', 'get', { id }
   )
 }
+
+/**
+ * 获取顶二级类目信息
+ * @param { String } id - 顶级类目 ID
+ * @returns {*}
+ */
+export const findSubCategoryFilter = (id) => {
+  return request(
+    '/category/sub/filter', 'get', { id }
+  )
+}

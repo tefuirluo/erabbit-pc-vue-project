@@ -1,17 +1,19 @@
 <template>
-  <div>Sub-Category</div>
   <div class="container">
     <!--面包屑-->
     <SubBread />
+    <!--筛选区-->
+    <SubFilter />
   </div>
 </template>
 
 <script>
 import SubBread from '@/views/category/components/sub-bread'
+import SubFilter from '@/views/category/sub-filter'
 
 export default {
   name: 'SubCategory',
-  components: { SubBread }
+  components: { SubFilter, SubBread }
 
 }
 </script>
